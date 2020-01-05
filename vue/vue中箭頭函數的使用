@@ -1,0 +1,15 @@
+note：不應該使用箭頭來定義以下方法
+    1.生命周期以及和生命周期相關的方法
+    2.methods内的函數
+    3.computed内的方法
+    4.data屬性
+    5.watcher相關的方法
+
+reason：
+    箭頭函數綁定的是父級的上下文，this在使用時不會再指向Vue實例。
+    也就是this不再固定，可能導致無法獲取data，method，store的實例。
+
+resole：
+    根據規範，僅在需要匿名函數時或者store時使用箭頭函數，其他情況下：
+    myfunc: function(){}
+    function myfunc(){}
